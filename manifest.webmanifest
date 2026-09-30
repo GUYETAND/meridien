@@ -1,0 +1,21 @@
+{
+  "name": "Méridien — Atlas d'acuponcture",
+  "short_name": "Méridien",
+  "description": "Atlas clinique d'acuponcture : recherche par indication et corps 3D interactif.",
+  "lang": "fr",
+  "dir": "ltr",
+  "id": "/",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#f8f7f3",
+  "theme_color": "#f8f7f3",
+  "categories": ["medical", "health", "education"],
+  "icons": [
+    { "src": "assets/icon-192.png",         "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png",         "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-512.png","sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,93 @@
+Paire anatomique homme — peau et squelette
+===========================================
+
+Fichiers dérivés : body.glb, skeleton.glb, body-navigator-m.png
+
+Œuvre : « Z-Anatomy — Models of human anatomy »
+Créateurs : Kousaku Okubo / BodyParts3D et Gauthier Kervyn / Z-Anatomy
+Source officielle :
+https://github.com/Z-Anatomy/Models-of-human-anatomy
+Archive de référence : Z-Anatomy/Startup.blend
+
+Z-Anatomy est distribué sous Creative Commons Attribution-ShareAlike 4.0
+International (CC BY-SA 4.0) :
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Les géométries d'origine BodyParts3D sont attribuées à :
+« BodyParts3D — The Database Center for Life Science »
+Licence CC BY-SA 2.1 Japan :
+https://creativecommons.org/licenses/by-sa/2.1/jp/deed.en
+
+Attribution Z-Anatomy demandée par la source :
+« Z-Anatomy — The libre 3D atlas of anatomy — CC BY-SA 4.0 »
+
+Notes techniques :
+ - La peau et le squelette sont extraits du même fichier Blender et reçoivent
+   exactement la même transformation géométrique. Le crâne, les mains, le
+   bassin et les pieds ne sont donc plus alignés par approximation au runtime.
+ - Conversion reproductible avec scripts/export-z-anatomy-pair.py, exécuté par
+   Blender en mode hors écran.
+ - Les territoires cutanés sont soudés avec une tolérance de 0,5 mm avant le
+   recalcul des normales, afin d'éviter les discontinuités du dos, du cou et
+   du visage sans remeshing volumétrique.
+ - Repère GLB Méridien : face vers -X, haut +Y, largeur Z, pieds à y=0,
+   enveloppe masculine haute de 1,78 m.
+ - body.glb : 96 726 triangles, géométrie Draco.
+ - skeleton.glb : 696 187 triangles, géométrie Draco.
+ - body-navigator-m.png est un rendu orthographique transparent dérivé du même
+   maillage cutané.
+ - Ces fichiers dérivés restent distribués sous CC BY-SA 4.0.
+
+
+Modèle féminin distinct
+=======================
+
+Fichiers dérivés : body-f.glb, body-navigator-f.png
+
+Œuvre : « Body female realistic »
+Collection : Blender Studio — Human Base Meshes
+Auteur principal : Dan Ulrich
+Contributeurs de la collection : Blender Studio, Paul Kotelevets,
+Tonatiuh de San Julián et Julien Kaspar
+Source officielle :
+https://www.blender.org/download/demo/asset-bundles/human-base-meshes/human-base-meshes-bundle-v1.2.0.zip
+Copie STL documentée :
+https://commons.wikimedia.org/wiki/File:Body_female_realistic_by_Dan_Ulrich_(CC0).stl
+
+Licence : CC0 1.0 Universal (domaine public).
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Notes techniques :
+ - La source STL est réduite à 120 000 triangles avec une simplification
+   quadratique conservant la silhouette.
+ - Conversion reproductible avec scripts/optimize-body-model.py.
+ - Le squelette masculin assorti est cloné puis ajusté à l'enveloppe féminine
+   distincte. Cet ajustement est visuel et approximatif ; il ne constitue pas
+   une modélisation anatomique féminine certifiée.
+ - Le stencil WebGL confine le rendu osseux dans cette enveloppe à tout angle.
+
+
+Décodeur Draco
+==============
+
+Le décodeur est référencé par `DRACOLoader` depuis Three.js et émis
+automatiquement dans `dist/assets/` par Vite. Il est précaché avec le shell PWA.
+
+Source : Three.js r185, examples/jsm/libs/draco
+Licence : MIT — Copyright © 2010-2026 three.js authors
+https://github.com/mrdoob/three.js/blob/dev/LICENSE
+
+
+Avertissement
+=============
+
+Le sous-ensemble lower-limb-anatomy.glb est également dérivé de Z-Anatomy,
+archive Z-Anatomy.zip (Git blob f43cabc6f366b2a6058dd2ed4a2b3c7b9b2492cb),
+sous CC BY-SA 4.0. Il conserve 16 structures nommées (os et muscles) des deux
+membres inférieurs masculins. Adaptations : même transformation que la peau,
+validation topologique Blender, séparation des objets et compression Draco.
+Reproduction : scripts/export-lower-limb-anatomy.py ; détails : docs/anatomie-locale.md.
+
+Ces modèles servent au repérage visuel et à l'enseignement. Ils ne remplacent
+ni une donnée clinique validée, ni un diagnostic, ni une localisation précise
+des points d'acuponcture.

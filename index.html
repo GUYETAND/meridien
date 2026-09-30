@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Méridien — Atlas clinique d'acuponcture</title>
+    <meta
+      name="description"
+      content="Méridien, atlas clinique d'acuponcture : recherche par indication, corps 3D interactif et fiches de points."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Ma+Shan+Zheng&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#f8f7f3" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Méridien" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <script type="module" crossorigin src="./assets/index-DwD6nALF.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C1osiVoz.css">
+  <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body>
+    <a class="skip-link" href="#view-home">Aller au contenu principal</a>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand-lockup" href="#/" data-view="home" aria-label="Méridien, accueil">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 44 44" role="img">
+              <circle cx="22" cy="22" r="19"></circle>
+              <path d="M7 24c5-3 8-3 13 0s9 3 17-1"></path>
+              <path d="M8 29c6-2 10-1 14 1 5 3 9 2 14-1"></path>
+              <path d="M15 10c4 3 5 7 4 12"></path>
+            </svg>
+          </span>
+          <span>
+            <strong>Méridien</strong>
+            <small>Atlas d'acuponcture</small>
+          </span>
+        </a>
+
+        <div class="search-cluster">
+          <form class="global-search" id="search-form" role="search">
+            <span class="search-glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="m16 16 4 4"></path>
+              </svg>
+            </span>
+            <input
+              id="q"
+              type="search"
+              inputmode="search"
+              placeholder="Indication, fonction, zone ou point…"
+              autocomplete="off"
+              autocapitalize="none"
+              spellcheck="false"
+              aria-label="Rechercher une indication ou un point d'acuponcture"
+            />
+            <kbd>Entrée</kbd>
+            <button type="submit" id="search-submit" aria-label="Lancer la recherche">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="m16 16 4 4"></path>
+              </svg>
+            </button>
+          </form>
+          <div class="suggest" id="suggest" aria-label="Recherches suggérées">
+            <button type="button" class="chip" data-q="digestion lente">digestion lente</button>
+            <button type="button" class="chip" data-q="céphalée">céphalée</button>
+            <button type="button" class="chip" data-q="fatigue">fatigue</button>
+            <button type="button" class="chip" data-q="nausée">nausée</button>
+            <button type="button" class="chip" data-q="lombalgie">lombalgie</button>
+          </div>
+          <div id="results" class="sr-only" aria-live="polite"></div>
+        </div>
+
+        <div class="top-actions">
+          <button
+            type="button"
+            class="top-action"
+            data-view="sources"
+            aria-label="Consulter les sources"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 5.5c2.8-.9 5.4-.5 8 1.2v12c-2.6-1.7-5.2-2.1-8-1.2z"></path>
+              <path d="M20 5.5c-2.8-.9-5.4-.5-8 1.2v12c2.6-1.7 5.2-2.1 8-1.2z"></path>
+            </svg>
+            <span>Sources</span>
+          </button>
+          <button
+            type="button"
+            class="top-action"
+            id="install"
+            title="Installer l'application"
+            hidden
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4"></path>
+              <path d="M5 17v3h14v-3"></path>
+            </svg>
+            <span>Installer</span>
+          </button>
+        </div>
+      </header>
+
+      <aside class="primary-rail" aria-label="Navigation principale">
+        <nav>
+          <button
+            type="button"
+            class="rail-item is-active"
+            data-view="home"
+            data-nav-view="home"
+            aria-current="page"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m3 11 9-7 9 7"></path>
+              <path d="M5 10v10h14V10M9 20v-6h6v6"></path>
+            </svg>
+            <span>Accueil</span>
+          </button>
+          <button
+            type="button"
+            class="rail-item"
+            data-view="atlas"
+            data-nav-view="atlas"
+            data-action="focus-body"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="5" r="2.3"></circle>
+              <path d="M12 7.5v6M7 10l5 2 5-2M9 21l3-7 3 7"></path>
+            </svg>
+            <span>Corps</span>
+          </button>
+          <button type="button" class="rail-item" data-view="search" data-nav-view="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="m16 16 4 4"></path>
+            </svg>
+            <span>Recherche</span>
+          </button>
+          <button type="button" class="rail-item" data-view="search" data-open-analysis>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 4h14v16H5z"></path>
+              <path d="M8.5 9h7M8.5 12.5h7M8.5 16h4"></path>
+            </svg>
+            <span>Analyse</span>
+          </button>
+        </nav>
+        <button type="button" class="rail-collapse" id="rail-collapse" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m14 6-6 6 6 6"></path>
+          </svg>
+          <span>Réduire</span>
+        </button>
+      </aside>
+
+      <main class="entry-view home-view view" id="view-home" tabindex="-1">
+        <section class="entry-page-shell home-page-shell" aria-labelledby="home-title">
+          <div class="home-intro">
+            <span class="entry-kicker">Atlas clinique d'acuponcture</span>
+            <h1 id="home-title" data-view-heading tabindex="-1">Explorer Méridien</h1>
+            <p>Accédez aux mêmes notions par l'anatomie ou par les termes de votre recherche.</p>
+          </div>
+
+          <div class="home-entry-grid" aria-label="Choisir une entrée dans Méridien">
+            <button
+              type="button"
+              class="home-entry home-entry-body"
+              data-view="atlas"
+              data-action="focus-body"
+              data-home-body
+            >
+              <span class="home-entry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="4.5" r="2.2"></circle>
+                  <path d="M12 7v6M7 9.5l5 2.2 5-2.2M9 21l3-8 3 8"></path>
+                </svg>
+              </span>
+              <span class="home-entry-copy">
+                <small>Exploration anatomique</small>
+                <strong>Par zone du corps</strong>
+                <em>Sélectionnez une région sur le corps, puis précisez le côté et la face.</em>
+              </span>
+              <span class="home-entry-action">Explorer le corps <b aria-hidden="true">→</b></span>
+            </button>
+
+            <button
+              type="button"
+              class="home-entry home-entry-search"
+              data-view="search"
+              data-home-search
+            >
+              <span class="home-entry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="10.5" cy="10.5" r="5.5"></circle>
+                  <path d="m15 15 4.5 4.5"></path>
+                </svg>
+              </span>
+              <span class="home-entry-copy">
+                <small>Consultation ou analyse</small>
+                <strong>Par recherche</strong>
+                <em
+                  >Recherchez une indication, une fonction, un point ou un terme du référentiel.</em
+                >
+              </span>
+              <span class="home-entry-action">Ouvrir la recherche <b aria-hidden="true">→</b></span>
+            </button>
+          </div>
+
+          <p class="coverage-note">
+            <span aria-hidden="true">i</span>
+            Les contenus incomplets, verrouillés ou approximatifs sont signalés dans l'interface.
+          </p>
+        </section>
+      </main>
+
+      <main class="entry-view search-page view" id="view-search" tabindex="-1" hidden>
+        <section class="entry-page-shell search-page-shell" aria-labelledby="search-page-title">
+          <nav class="entry-breadcrumb" aria-label="Fil d'Ariane">
+            <button type="button" data-view="home">Accueil</button>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Recherche</span>
+          </nav>
+
+          <div class="search-page-heading">
+            <span class="entry-kicker">Deux usages, un même atlas</span>
+            <h1 id="search-page-title" data-view-heading tabindex="-1">Rechercher dans Méridien</h1>
+            <p>Choisissez le mode adapté à votre objectif.</p>
+          </div>
+
+          <fieldset class="search-mode-picker">
+            <legend>Mode de recherche</legend>
+            <div class="search-mode-options">
+              <button
+                type="button"
+                class="is-active"
+                data-search-mode="documentary"
+                aria-pressed="true"
+              >
+                <span>Consultation documentaire</span>
+                <small>Consulter la base sans lancer d'analyse</small>
+              </button>
+              <button type="button" data-search-mode="analysis" aria-pressed="false">
+                <span>Analyse guidée</span>
+                <small>Structurer un cas éphémère</small>
+              </button>
+            </div>
+          </fieldset>
+
+          <div class="search-page-card">
+            <p id="search-mode-description">
+              Trouvez des points et régions dans la base disponible, sans lancer d'analyse.
+            </p>
+            <section
+              id="clinical-v3"
+              class="clinical-v3"
+              aria-labelledby="clinical-v3-title"
+              hidden
+            >
+              <h2 id="clinical-v3-title">Traduction descriptive V3</h2>
+              <p>
+                Décrivez un cas fictif. La lecture sépare ce qui est exprimé de ce qui reste inconnu
+                ; elle ne choisit ni diagnostic, ni traitement, ni point.
+              </p>
+              <label for="clinical-v3-input">Description du cas</label>
+              <textarea
+                id="clinical-v3-input"
+                rows="4"
+                autocomplete="off"
+                placeholder="Ex. ventre gonflé + fatigue après repas"
+              ></textarea>
+              <div class="clinical-v3-actions">
+                <button type="button" id="clinical-v3-run" disabled>
+                  Traduire les observations
+                </button>
+                <button type="button" id="clinical-v3-clear">Effacer</button>
+              </div>
+              <p id="clinical-v3-status" role="status" aria-live="polite"></p>
+              <div id="clinical-v3-result" hidden></div>
+            </section>
+            <p id="search-guided-context" class="search-guided-context" hidden>
+              Parcours guidé existant : saisissez un motif court pour ouvrir les grilles manuelles.
+            </p>
+            <form id="search-page-form" class="search-page-form" role="search">
+              <label id="search-page-q-label" for="search-page-q"
+                >Terme, indication, fonction, code ou région</label
+              >
+              <div class="search-page-field">
+                <span aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="6.5"></circle>
+                    <path d="m16 16 4 4"></path>
+                  </svg>
+                </span>
+                <input
+                  id="search-page-q"
+                  type="search"
+                  inputmode="search"
+                  placeholder="Ex. céphalée, insomnie, E36, jambe…"
+                  autocomplete="off"
+                  spellcheck="false"
+                />
+              </div>
+              <button type="submit" id="search-page-submit">Afficher les correspondances</button>
+            </form>
+            <div id="search-zone" class="search-zone" hidden>
+              <span id="search-zone-label"></span>
+              <button type="button" id="search-zone-clear" aria-label="Retirer le filtre de zone">
+                Retirer ×
+              </button>
+              <small
+                >Seule la région est filtrée ; côté et face ne sont pas encore renseignés.</small
+              >
+            </div>
+            <section
+              id="search-region-matches"
+              class="search-region-matches"
+              aria-labelledby="search-region-title"
+              hidden
+            >
+              <h2 id="search-region-title">Ouvrir une région anatomique</h2>
+              <p>Choisissez une zone du mannequin. Cette action ne sélectionne aucun point.</p>
+              <div id="search-region-face-field" class="search-region-face" hidden>
+                <label for="search-region-face">Face du plan local</label>
+                <select id="search-region-face">
+                  <option value="anterior">Antérieure</option>
+                  <option value="posterior">Postérieure</option>
+                  <option value="medial">Médiale</option>
+                  <option value="lateral">Latérale</option>
+                </select>
+              </div>
+              <div id="search-region-options" class="search-region-options"></div>
+            </section>
+            <div id="search-page-suggest" class="search-page-suggest" aria-label="Exemples">
+              <button type="button" data-q="digestion lente">digestion lente</button>
+              <button type="button" data-q="céphalée">céphalée</button>
+              <button type="button" data-q="fatigue">fatigue</button>
+              <button type="button" data-q="E36">E36</button>
+            </div>
+            <p id="search-page-status" class="search-page-status" role="status" aria-live="polite">
+              Saisissez un terme pour consulter les correspondances documentaires.
+            </p>
+          </div>
+
+          <aside class="search-safety-note">
+            <strong>Repère de fonctionnement</strong>
+            <p>
+              La consultation affiche uniquement les données disponibles. L'analyse guidée ne
+              produit ni diagnostic, ni prescription, ni sélection automatique de point.
+            </p>
+          </aside>
+        </section>
+      </main>
+
+      <main class="entry-view sources-view view" id="view-sources" tabindex="-1" hidden>
+        <section class="entry-page-shell sources-page-shell" aria-labelledby="source-title">
+          <button type="button" class="source-back" id="source-back" data-source-back>
+            Retour à l’accueil
+          </button>
+          <header class="source-header">
+            <span class="entry-kicker">Source</span>
+            <h1 id="source-title" data-view-heading tabindex="-1">Sources et provenances</h1>
+            <p id="source-offline" role="status" hidden>
+              Hors ligne : les données locales restent disponibles ; les liens externes ne le sont
+              pas.
+            </p>
+          </header>
+          <div id="source-content"></div>
+          <button type="button" class="source-feedback-link" data-view="feedback">
+            Signaler une correction ou une amélioration
+          </button>
+        </section>
+      </main>
+
+      <main class="entry-view feedback-view view" id="view-feedback" tabindex="-1" hidden>
+        <section class="entry-page-shell feedback-page-shell" aria-labelledby="feedback-title">
+          <button type="button" class="source-back" id="feedback-back">Retour</button>
+          <header class="feedback-header">
+            <span class="entry-kicker">Retour utilisateur</span>
+            <h1 id="feedback-title" data-view-heading tabindex="-1">
+              Signaler une correction ou une amélioration
+            </h1>
+            <p>
+              L'envoi direct n'est pas encore disponible. Le contenu peut être copié et transmis à
+              l'équipe du projet.
+            </p>
+          </header>
+          <p class="feedback-safety" id="feedback-safety">
+            Ne saisissez aucune donnée de patient ni de cas clinique identifiable. Ce brouillon
+            n'est ni envoyé ni enregistré.
+          </p>
+          <p class="feedback-context" id="feedback-context"></p>
+          <form id="feedback-form" novalidate>
+            <label for="feedback-kind">Type de retour <span aria-hidden="true">*</span></label>
+            <select id="feedback-kind" required aria-required="true">
+              <option value="">Choisir un type</option>
+              <option value="correction">Correction de contenu</option>
+              <option value="amelioration">Amélioration</option>
+              <option value="probleme">Problème technique</option>
+            </select>
+            <label for="feedback-element">Élément concerné</label>
+            <input id="feedback-element" type="text" maxlength="160" autocomplete="off" />
+            <label for="feedback-description">Description <span aria-hidden="true">*</span></label>
+            <textarea
+              id="feedback-description"
+              rows="6"
+              maxlength="2000"
+              required
+              aria-required="true"
+              aria-describedby="feedback-safety"
+            ></textarea>
+            <label for="feedback-source">Source ou précision utile</label>
+            <textarea id="feedback-source" rows="3" maxlength="600"></textarea>
+            <button type="submit" class="feedback-copy-button">Copier le retour</button>
+            <p id="feedback-status" role="status" aria-live="polite"></p>
+          </form>
+          <div id="feedback-manual" hidden>
+            <label for="feedback-copy-text">Texte à copier manuellement</label>
+            <textarea id="feedback-copy-text" rows="10" readonly></textarea>
+          </div>
+        </section>
+      </main>
+
+      <main class="entry-view view" id="view-administration" tabindex="-1" hidden>
+        <section class="entry-page-shell sources-page-shell" aria-labelledby="administration-title">
+          <header class="source-header">
+            <span class="entry-kicker">Administration</span>
+            <h1 id="administration-title" data-view-heading tabindex="-1">
+              Administration indisponible dans cette version.
+            </h1>
+            <p>
+              Aucun compte, rôle ou service d’administration n’est activé dans cette version de
+              Méridien.
+            </p>
+          </header>
+          <button type="button" class="source-feedback-link" data-view="home">
+            Retour à l’accueil
+          </button>
+        </section>
+      </main>
+
+      <main class="clinical-workspace view" id="view-atlas" tabindex="-1" hidden>
+        <section class="anatomy-panel panel" id="anatomy-panel" aria-labelledby="anatomy-title">
+          <header class="panel-heading">
+            <div>
+              <span class="panel-kicker">Navigation anatomique</span>
+              <h2 id="anatomy-title">Vue globale</h2>
+            </div>
+            <div class="anatomy-heading-actions">
+              <button
+                type="button"
+                class="anatomy-close"
+                id="anatomy-close"
+                aria-label="Fermer la navigation anatomique"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m6 6 12 12M18 6 6 18"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="anatomy-map">
+            <svg
+              id="body-navigator"
+              viewBox="0 0 100 200"
+              role="group"
+              aria-label="Mannequin anatomique interactif : sélectionnez une zone pour zoomer dans le modèle 3D"
+            ></svg>
+          </div>
+          <p class="anatomy-asset-missing" id="anatomy-asset-missing" hidden>
+            Le mannequin 2D est indisponible. Utilisez la liste des zones ci-dessous.
+          </p>
+
+          <div class="anatomy-status">
+            <span>Zone active</span>
+            <strong id="anatomy-region">Corps entier</strong>
+          </div>
+          <details class="anatomy-zone-list" id="anatomy-zone-list">
+            <summary>Liste des zones</summary>
+            <div id="anatomy-zone-options" aria-label="Zones anatomiques"></div>
+          </details>
+        </section>
+
+        <section class="viewer-panel panel" aria-labelledby="viewer-title">
+          <header class="viewer-heading">
+            <div>
+              <span class="panel-kicker" id="viewer-kicker">Corps · vue 3D</span>
+              <h1 id="viewer-title" data-view-heading tabindex="-1">Choisir une zone du corps</h1>
+              <p id="body-region">
+                Choisissez une zone sur le mannequin ou dans la liste, ou faites pivoter le modèle.
+              </p>
+            </div>
+            <div class="viewer-heading-actions">
+              <span class="precision-badge" id="viewer-mode-badge">Positions approximatives</span>
+              <button type="button" class="section-back" id="explore-local-anatomy">
+                Explorer le genou
+              </button>
+              <button
+                type="button"
+                class="anatomy-open"
+                data-action="show-zones"
+                aria-controls="anatomy-panel"
+                aria-expanded="false"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="5" r="2.3"></circle>
+                  <path d="M12 7.5v6M7 10l5 2 5-2M9 21l3-7 3 7"></path>
+                </svg>
+                Zones
+              </button>
+            </div>
+          </header>
+
+          <nav
+            class="body-section-nav"
+            id="body-section-nav"
+            aria-label="Plan anatomique local"
+            hidden
+          >
+            <button type="button" class="section-back" id="body-section-back">
+              <span aria-hidden="true">←</span>
+              Corps entier
+            </button>
+            <ol class="section-breadcrumb" id="body-section-breadcrumb" aria-live="polite"></ol>
+            <div class="section-faces" role="group" aria-label="Face anatomique affichée">
+              <button type="button" data-section-face="anterior">Antérieure</button>
+              <button type="button" data-section-face="posterior">Postérieure</button>
+              <button type="button" data-section-face="medial">Médiale</button>
+              <button type="button" data-section-face="lateral">Latérale</button>
+            </div>
+            <button type="button" class="section-search" id="search-in-section">
+              Rechercher dans cette zone
+            </button>
+          </nav>
+
+          <div class="body-3d-stage" id="body-3d-stage" aria-busy="true">
+            <div class="body-3d-loading" id="body-3d-loading" role="status" aria-live="polite">
+              <span aria-hidden="true"></span>
+              <strong>Préparation du corps 3D</strong>
+              <small>Chargement des structures anatomiques…</small>
+            </div>
+            <canvas
+              id="body-3d"
+              role="img"
+              tabindex="0"
+              aria-label="Modèle 3D interactif du corps humain avec squelette anatomique"
+            ></canvas>
+            <div class="body-3d-fallback" id="body-3d-fallback" hidden>
+              <strong>Visualisation 3D indisponible</strong>
+              <span>WebGL doit être activé pour afficher le modèle anatomique.</span>
+            </div>
+            <div class="stage-label" id="body-stage-label">
+              Glissez pour tourner · touchez un genou ou une jambe
+            </div>
+            <div class="stage-controls" aria-label="Contrôles de la vue 3D">
+              <button type="button" id="body-zoom-in" aria-label="Zoomer" title="Zoomer">+</button>
+              <button type="button" id="body-zoom-out" aria-label="Dézoomer" title="Dézoomer">
+                −
+              </button>
+              <button
+                type="button"
+                id="body-reset"
+                aria-label="Recentrer le modèle"
+                title="Recentrer le modèle"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M12 2v4m0 12v4M2 12h4m12 0h4"></path>
+                </svg>
+              </button>
+            </div>
+            <button
+              type="button"
+              class="body-layer-toggle"
+              id="body-skeleton"
+              aria-pressed="true"
+              aria-label="Masquer le squelette anatomique"
+              title="Masquer le squelette anatomique"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3v18M7.5 7.2Q12 10 16.5 7.2M6.8 10Q12 13.4 17.2 10M8 13q4 2.7 8 0M9.2 17 6.5 21M14.8 17l2.7 4"
+                ></path>
+                <circle cx="12" cy="3" r="1.8"></circle>
+              </svg>
+              <span>Squelette</span>
+            </button>
+            <button
+              type="button"
+              class="body-sex"
+              id="body-sex"
+              aria-pressed="false"
+              aria-label="Afficher le modèle femme"
+              title="Afficher le modèle femme"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="8" r="4"></circle>
+                <path d="M12 12v9M8.5 17.5h7"></path>
+              </svg>
+              <span>Femme</span>
+            </button>
+          </div>
+
+          <footer class="viewer-foot">
+            <span class="viewer-legend" id="viewer-point-legend"><i></i> Point correspondant</span>
+            <span id="body-hint">Les positions sans calibration précise sont approximatives.</span>
+          </footer>
+        </section>
+
+        <aside class="inspector-panel panel" aria-label="Inspecteur clinique">
+          <div class="inspector-tabs" role="tablist" aria-label="Contenu de l'inspecteur">
+            <button
+              type="button"
+              role="tab"
+              data-inspector-tab="reasoning"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Parcours
+            </button>
+            <button
+              type="button"
+              role="tab"
+              data-inspector-tab="view"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Vue
+            </button>
+            <button
+              type="button"
+              role="tab"
+              data-inspector-tab="layers"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Couches
+            </button>
+            <button
+              type="button"
+              role="tab"
+              data-inspector-tab="points"
+              class="is-active"
+              aria-selected="true"
+            >
+              Points
+            </button>
+            <button
+              type="button"
+              role="tab"
+              data-inspector-tab="relations"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Relations
+            </button>
+          </div>
+
+          <div class="inspector-content">
+            <section class="inspector-pane reasoning-pane" data-inspector-pane="reasoning" hidden>
+              <div id="reasoning-root"></div>
+            </section>
+            <section class="inspector-pane" data-inspector-pane="view" hidden>
+              <div class="pane-title">
+                <span>Orientation du modèle</span>
+                <small>Vue active</small>
+              </div>
+              <div class="view-grid">
+                <button type="button" class="is-active" data-preset="front">Face</button>
+                <button type="button" data-preset="back">Dos</button>
+                <button type="button" data-preset="left">Profil gauche</button>
+                <button type="button" data-preset="right">Profil droit</button>
+              </div>
+              <p class="view-help">
+                Glissez pour tourner, glissez à deux doigts pour déplacer, pincez ou utilisez + / −
+                pour zoomer.
+              </p>
+              <button type="button" class="tab-link" data-inspector-jump="layers">
+                Gérer les couches de lecture
+                <span aria-hidden="true">→</span>
+              </button>
+            </section>
+
+            <section class="inspector-pane layer-pane" data-inspector-pane="layers" hidden>
+              <div class="pane-title">
+                <span>Couches de lecture</span>
+                <small>Effet immédiat</small>
+              </div>
+              <p class="layer-intro">
+                Superposez les repères disponibles. Les réseaux sans géométrie sourcée restent
+                volontairement verrouillés.
+              </p>
+              <button
+                type="button"
+                id="layer-batch-open"
+                class="layer-batch-open"
+                aria-controls="layer-batch-panel"
+                aria-expanded="false"
+              >
+                Préparer plusieurs couches
+              </button>
+              <div id="layer-batch-panel" class="layer-batch-panel" hidden>
+                <p>
+                  La scène ne change qu'après « Appliquer ». Un changement direct de couche annule
+                  cette préparation.
+                </p>
+                <fieldset>
+                  <legend>Couches disponibles</legend>
+                  <div id="layer-batch-options"></div>
+                </fieldset>
+                <div class="layer-batch-actions">
+                  <button type="button" id="layer-batch-reset">Réinitialiser ce panneau</button>
+                  <button type="button" id="layer-batch-cancel">Annuler</button>
+                  <button type="button" id="layer-batch-apply">Appliquer</button>
+                </div>
+              </div>
+              <p id="layer-batch-status" class="layer-batch-status" role="status"></p>
+              <div id="anatomy-structures"></div>
+              <div id="clinical-layer-list" class="clinical-layer-list"></div>
+            </section>
+
+            <section class="inspector-pane" data-inspector-pane="points">
+              <div class="pane-title">
+                <span id="search-summary">Points du secteur</span>
+                <span class="pane-title-actions">
+                  <small id="result-count">0 résultat</small>
+                  <button type="button" id="modify-search" hidden>Modifier la recherche</button>
+                </span>
+              </div>
+              <div class="point-results" id="point-results">
+                <div class="inspector-empty">
+                  Saisissez une indication pour afficher les points correspondants.
+                </div>
+              </div>
+            </section>
+
+            <section class="inspector-pane" data-inspector-pane="relations" hidden>
+              <div id="relations-root"></div>
+            </section>
+
+            <div class="clinical-accordions">
+              <details open>
+                <summary>
+                  <span class="summary-icon summary-route" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M4 7h10a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h11"></path>
+                      <circle cx="4" cy="7" r="1.5"></circle>
+                      <circle cx="20" cy="19" r="1.5"></circle>
+                    </svg>
+                  </span>
+                  Sélection clinique
+                </summary>
+                <div id="selection-overview" class="detail-content">Aucun point sélectionné.</div>
+              </details>
+              <details>
+                <summary>
+                  <span class="summary-icon summary-point" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="10" r="4"></circle>
+                      <path d="M12 14v7"></path>
+                    </svg>
+                  </span>
+                  Localisation
+                </summary>
+                <div id="selection-location" class="detail-content">
+                  Sélectionnez un résultat pour consulter sa localisation.
+                </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="summary-icon summary-element" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="7"></circle>
+                      <path d="M12 5a7 7 0 0 1 0 14c2-2 2-5 0-7s-2-5 0-7Z"></path>
+                    </svg>
+                  </span>
+                  Méridien et élément
+                </summary>
+                <div id="selection-meridian" class="detail-content">
+                  Aucune donnée sélectionnée.
+                </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="summary-icon summary-source" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h4"></path>
+                    </svg>
+                  </span>
+                  Données
+                </summary>
+                <div class="detail-content">
+                  Base de démonstration locale — à remplacer par la base clinique définitive.
+                </div>
+              </details>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <button
+        type="button"
+        class="anatomy-backdrop"
+        id="anatomy-backdrop"
+        aria-label="Fermer la navigation anatomique"
+        hidden
+      ></button>
+
+      <nav class="mobile-nav" aria-label="Navigation mobile">
+        <button
+          type="button"
+          class="is-active"
+          data-view="home"
+          data-nav-view="home"
+          aria-current="page"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m3 11 9-7 9 7M5 10v10h14V10"></path>
+          </svg>
+          Accueil
+        </button>
+        <button type="button" data-view="atlas" data-nav-view="atlas" data-action="focus-body">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="5" r="2.3"></circle>
+            <path d="M12 7.5v6M7 10l5 2 5-2M9 21l3-7 3 7"></path>
+          </svg>
+          Corps
+        </button>
+        <button type="button" data-view="search" data-nav-view="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4 4"></path>
+          </svg>
+          Recherche
+        </button>
+        <button type="button" data-view="search" data-open-analysis>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 4h14v16H5z"></path>
+            <path d="M8.5 9h7M8.5 12.5h7M8.5 16h4"></path>
+          </svg>
+          Analyse
+        </button>
+        <button type="button" data-action="show-points">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="3"></circle>
+            <path d="M5 21c.4-5 2.7-8 7-8s6.6 3 7 8"></path>
+          </svg>
+          Points
+        </button>
+      </nav>
+
+      <div
+        class="sheet"
+        id="sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="sheet-title"
+      >
+        <button type="button" class="sheet-close" data-sheet-close aria-label="Fermer la fiche">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18"></path>
+          </svg>
+        </button>
+        <div class="grip" aria-hidden="true"></div>
+        <div id="sheet-content"></div>
+      </div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+
+  </body>
+</html>
