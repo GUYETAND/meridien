@@ -8,12 +8,6 @@
       name="description"
       content="Méridien, atlas clinique d'acuponcture : recherche par indication, corps 3D interactif et fiches de points."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Ma+Shan+Zheng&display=swap"
-      rel="stylesheet"
-    />
     <link rel="manifest" href="manifest.webmanifest" />
     <meta name="theme-color" content="#f8f7f3" />
     <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
@@ -23,8 +17,8 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Méridien" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <script type="module" crossorigin src="./assets/index-DwD6nALF.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-C1osiVoz.css">
+    <script type="module" crossorigin src="./assets/index-Co9znSep.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CLYa3oPe.css">
   <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <a class="skip-link" href="#view-home">Aller au contenu principal</a>
@@ -502,6 +496,16 @@
               <span class="precision-badge" id="viewer-mode-badge">Positions approximatives</span>
               <button type="button" class="section-back" id="explore-local-anatomy">
                 Explorer le genou
+              </button>
+              <button
+                type="button"
+                class="results-jump"
+                id="results-jump"
+                aria-controls="point-results"
+                hidden
+              >
+                <span id="results-jump-label">Voir les points</span>
+                <span aria-hidden="true">↓</span>
               </button>
               <button
                 type="button"
