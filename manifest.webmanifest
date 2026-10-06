@@ -1,7 +1,7 @@
 {
-  "name": "Méridien — Atlas d'acuponcture",
-  "short_name": "Méridien",
-  "description": "Atlas clinique d'acuponcture : recherche par indication et corps 3D interactif.",
+  "name": "AcuFrame — Acupuncture traditionnelle",
+  "short_name": "AcuFrame",
+  "description": "Outil de raisonnement en acupuncture traditionnelle : observation, corps et référentiel reliés.",
   "lang": "fr",
   "dir": "ltr",
   "id": "/",

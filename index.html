@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Méridien — Atlas clinique d'acuponcture</title>
+    <title>AcuFrame — Acupuncture traditionnelle</title>
     <meta
       name="description"
-      content="Méridien, atlas clinique d'acuponcture : recherche par indication, corps 3D interactif et fiches de points."
+      content="AcuFrame, outil de raisonnement en acupuncture traditionnelle : partir de ce que l'on observe, du corps ou d'une notion connue."
     />
     <link rel="manifest" href="manifest.webmanifest" />
     <meta name="theme-color" content="#f8f7f3" />
@@ -15,16 +15,16 @@
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Méridien" />
+    <meta name="apple-mobile-web-app-title" content="AcuFrame" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <script type="module" crossorigin src="./assets/index-Co9znSep.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CLYa3oPe.css">
+    <script type="module" crossorigin src="./assets/index-DMrbh1tC.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DNhJS7w1.css">
   <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <a class="skip-link" href="#view-home">Aller au contenu principal</a>
     <div class="app-shell">
       <header class="topbar">
-        <a class="brand-lockup" href="#/" data-view="home" aria-label="Méridien, accueil">
+        <a class="brand-lockup" href="#/" data-view="home" aria-label="AcuFrame, accueil">
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 44 44" role="img">
               <circle cx="22" cy="22" r="19"></circle>
@@ -34,8 +34,8 @@
             </svg>
           </span>
           <span>
-            <strong>Méridien</strong>
-            <small>Atlas d'acuponcture</small>
+            <strong>AcuFrame</strong>
+            <small>Acupuncture traditionnelle</small>
           </span>
         </a>
 
@@ -51,11 +51,11 @@
               id="q"
               type="search"
               inputmode="search"
-              placeholder="Indication, fonction, zone ou point…"
+              placeholder="Point, méridien, notion…"
               autocomplete="off"
               autocapitalize="none"
               spellcheck="false"
-              aria-label="Rechercher une indication ou un point d'acuponcture"
+              aria-label="Recherche directe : un point, un méridien, une fonction, une notion"
             />
             <kbd>Entrée</kbd>
             <button type="submit" id="search-submit" aria-label="Lancer la recherche">
@@ -132,19 +132,35 @@
             </svg>
             <span>Corps</span>
           </button>
-          <button type="button" class="rail-item" data-view="search" data-nav-view="search">
+          <button
+            type="button"
+            class="rail-item"
+            data-view="search"
+            data-nav-view="search"
+            data-nav-mode="analysis"
+            data-open-analysis
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="11" cy="11" r="6.5"></circle>
-              <path d="m16 16 4 4"></path>
+              <circle cx="6" cy="6" r="2.2"></circle>
+              <circle cx="18" cy="8" r="2.2"></circle>
+              <circle cx="11" cy="18" r="2.2"></circle>
+              <path d="M8.1 6.4 15.8 7.6M7.1 7.9l2.8 8.1M16.6 9.8l-4.3 6.6"></path>
             </svg>
-            <span>Recherche</span>
+            <span>Raisonnement</span>
           </button>
-          <button type="button" class="rail-item" data-view="search" data-open-analysis>
+          <button
+            type="button"
+            class="rail-item"
+            data-view="search"
+            data-nav-view="search"
+            data-nav-mode="documentary"
+            data-open-referentiel
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 4h14v16H5z"></path>
-              <path d="M8.5 9h7M8.5 12.5h7M8.5 16h4"></path>
+              <path d="M4 5.5c2.8-.9 5.4-.5 8 1.2v12c-2.6-1.7-5.2-2.1-8-1.2z"></path>
+              <path d="M20 5.5c-2.8-.9-5.4-.5-8 1.2v12c2.6-1.7 5.2-2.1 8-1.2z"></path>
             </svg>
-            <span>Analyse</span>
+            <span>Référentiel</span>
           </button>
         </nav>
         <button type="button" class="rail-collapse" id="rail-collapse" aria-pressed="false">
@@ -156,62 +172,127 @@
       </aside>
 
       <main class="entry-view home-view view" id="view-home" tabindex="-1">
-        <section class="entry-page-shell home-page-shell" aria-labelledby="home-title">
-          <div class="home-intro">
-            <span class="entry-kicker">Atlas clinique d'acuponcture</span>
-            <h1 id="home-title" data-view-heading tabindex="-1">Explorer Méridien</h1>
-            <p>Accédez aux mêmes notions par l'anatomie ou par les termes de votre recherche.</p>
+        <section class="home-page-shell" aria-labelledby="home-title">
+          <div class="home-hero">
+            <span class="entry-kicker">Outil de raisonnement traditionnel</span>
+            <h1 id="home-title" data-view-heading tabindex="-1">Un symptôme n'est jamais isolé.</h1>
+            <p>
+              Reliez ce que vous observez aux mouvements, fonctions, énergies, trajets et points qui
+              peuvent l'éclairer.
+            </p>
           </div>
 
-          <div class="home-entry-grid" aria-label="Choisir une entrée dans Méridien">
-            <button
-              type="button"
-              class="home-entry home-entry-body"
-              data-view="atlas"
-              data-action="focus-body"
-              data-home-body
+          <form class="home-observe" id="home-observe-form" aria-labelledby="home-observe-title">
+            <h2 id="home-observe-title" class="home-label">Partir de ce que j'observe</h2>
+            <label class="sr-only" for="home-observe"
+              >Décrivez en langage courant les symptômes, signes ou circonstances observés</label
             >
-              <span class="home-entry-icon" aria-hidden="true">
+            <div class="home-observe-field">
+              <textarea
+                id="home-observe"
+                rows="2"
+                placeholder="Décrivez ce que vous observez…"
+                autocomplete="off"
+                spellcheck="true"
+                enterkeyhint="go"
+              ></textarea>
+              <button type="submit" class="home-observe-submit">
+                Explorer les pistes <b aria-hidden="true">→</b>
+              </button>
+            </div>
+            <div class="home-examples" id="home-observe-examples">
+              <span id="home-observe-examples-label">Par exemple</span>
+              <div role="group" aria-labelledby="home-observe-examples-label">
+                <button type="button" data-example="douleur interne du genou à la marche">
+                  douleur interne du genou à la marche
+                </button>
+                <button type="button" data-example="ballonnements après les repas">
+                  ballonnements après les repas
+                </button>
+                <button type="button" data-example="bouffées de chaleur la nuit">
+                  bouffées de chaleur la nuit
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <section class="home-body" aria-labelledby="home-body-title">
+            <div class="home-mannequin-wrap">
+              <svg
+                id="home-mannequin"
+                viewBox="0 0 100 200"
+                role="group"
+                aria-label="Mannequin : choisissez une zone du corps"
+              ></svg>
+            </div>
+            <div class="home-body-copy">
+              <h2 id="home-body-title" class="home-label">Partir du corps</h2>
+              <p>
+                Choisissez une zone pour révéler les trajets, points et relations qui la traversent.
+              </p>
+              <button
+                type="button"
+                class="home-link home-link-body"
+                data-view="atlas"
+                data-action="focus-body"
+                data-home-body
+              >
+                Explorer le corps <b aria-hidden="true">→</b>
+              </button>
+            </div>
+          </section>
+
+          <section class="home-direct" aria-labelledby="home-direct-title">
+            <h2 id="home-direct-title" class="home-label">
+              Vous cherchez déjà une notion précise ?
+            </h2>
+            <form id="home-direct-form" class="home-direct-form" role="search">
+              <label class="sr-only" for="home-direct"
+                >Rechercher un point, un méridien, une fonction, une notion</label
+              >
+              <span class="home-direct-glyph" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="4.5" r="2.2"></circle>
-                  <path d="M12 7v6M7 9.5l5 2.2 5-2.2M9 21l3-8 3 8"></path>
+                  <circle cx="11" cy="11" r="6.5"></circle>
+                  <path d="m16 16 4 4"></path>
                 </svg>
               </span>
-              <span class="home-entry-copy">
-                <small>Exploration anatomique</small>
-                <strong>Par zone du corps</strong>
-                <em>Sélectionnez une région sur le corps, puis précisez le côté et la face.</em>
-              </span>
-              <span class="home-entry-action">Explorer le corps <b aria-hidden="true">→</b></span>
-            </button>
+              <input
+                id="home-direct"
+                type="search"
+                inputmode="search"
+                placeholder="Rechercher un point, un méridien, une fonction, une notion…"
+                autocomplete="off"
+                autocapitalize="none"
+                spellcheck="false"
+                aria-describedby="home-direct-hint"
+              />
+              <button type="submit">Rechercher</button>
+            </form>
+            <p class="home-direct-hint" id="home-direct-hint">
+              Ex. 1P · 4Rte · Tchrong Mo · Oé · Foie
+            </p>
+          </section>
 
-            <button
-              type="button"
-              class="home-entry home-entry-search"
-              data-view="search"
-              data-home-search
-            >
-              <span class="home-entry-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="10.5" cy="10.5" r="5.5"></circle>
-                  <path d="m15 15 4.5 4.5"></path>
-                </svg>
-              </span>
-              <span class="home-entry-copy">
-                <small>Consultation ou analyse</small>
-                <strong>Par recherche</strong>
-                <em
-                  >Recherchez une indication, une fonction, un point ou un terme du référentiel.</em
-                >
-              </span>
-              <span class="home-entry-action">Ouvrir la recherche <b aria-hidden="true">→</b></span>
-            </button>
-          </div>
-
-          <p class="coverage-note">
-            <span aria-hidden="true">i</span>
-            Les contenus incomplets, verrouillés ou approximatifs sont signalés dans l'interface.
-          </p>
+          <section
+            class="home-referentiel"
+            data-referentiel-index
+            aria-labelledby="home-referentiel-title"
+          >
+            <div class="home-referentiel-head">
+              <h2 id="home-referentiel-title" class="home-label">Explorer le référentiel</h2>
+              <button
+                type="button"
+                class="home-link"
+                data-view="search"
+                data-home-search
+                data-open-referentiel
+              >
+                Tout le référentiel <b aria-hidden="true">→</b>
+              </button>
+            </div>
+            <div class="referentiel-pills" data-referentiel-list></div>
+            <div class="referentiel-detail" data-referentiel-detail aria-live="polite" hidden></div>
+          </section>
         </section>
       </main>
 
@@ -220,17 +301,19 @@
           <nav class="entry-breadcrumb" aria-label="Fil d'Ariane">
             <button type="button" data-view="home">Accueil</button>
             <span aria-hidden="true">/</span>
-            <span aria-current="page">Recherche</span>
+            <span id="search-breadcrumb-current" aria-current="page">Référentiel</span>
           </nav>
 
           <div class="search-page-heading">
-            <span class="entry-kicker">Deux usages, un même atlas</span>
-            <h1 id="search-page-title" data-view-heading tabindex="-1">Rechercher dans Méridien</h1>
-            <p>Choisissez le mode adapté à votre objectif.</p>
+            <span class="entry-kicker" id="search-page-kicker">Recherche directe</span>
+            <h1 id="search-page-title" data-view-heading tabindex="-1">Référentiel</h1>
+            <p id="search-page-lede">
+              Vous savez ce que vous cherchez : trouvez l'information dans la base disponible.
+            </p>
           </div>
 
           <fieldset class="search-mode-picker">
-            <legend>Mode de recherche</legend>
+            <legend>Point de départ</legend>
             <div class="search-mode-options">
               <button
                 type="button"
@@ -238,19 +321,19 @@
                 data-search-mode="documentary"
                 aria-pressed="true"
               >
-                <span>Consultation documentaire</span>
-                <small>Consulter la base sans lancer d'analyse</small>
+                <span>Référentiel</span>
+                <small>Je sais ce que je cherche</small>
               </button>
               <button type="button" data-search-mode="analysis" aria-pressed="false">
-                <span>Analyse guidée</span>
-                <small>Structurer un cas éphémère</small>
+                <span>Raisonnement</span>
+                <small>Je pars de ce que j'observe</small>
               </button>
             </div>
           </fieldset>
 
           <div class="search-page-card">
             <p id="search-mode-description">
-              Trouvez des points et régions dans la base disponible, sans lancer d'analyse.
+              Trouvez des points et régions dans la base disponible, sans ouvrir le raisonnement.
             </p>
             <section
               id="clinical-v3"
@@ -343,11 +426,22 @@
             </p>
           </div>
 
+          <section
+            class="search-referentiel"
+            data-referentiel-index
+            aria-labelledby="search-referentiel-title"
+          >
+            <h2 id="search-referentiel-title">Explorer le référentiel</h2>
+            <div class="referentiel-pills" data-referentiel-list></div>
+            <div class="referentiel-detail" data-referentiel-detail aria-live="polite" hidden></div>
+          </section>
+
           <aside class="search-safety-note">
             <strong>Repère de fonctionnement</strong>
             <p>
-              La consultation affiche uniquement les données disponibles. L'analyse guidée ne
-              produit ni diagnostic, ni prescription, ni sélection automatique de point.
+              Le référentiel affiche uniquement les données disponibles. Le raisonnement accompagne
+              le praticien : il ne produit ni diagnostic, ni prescription, ni sélection automatique
+              de point.
             </p>
           </aside>
         </section>
@@ -430,8 +524,8 @@
               Administration indisponible dans cette version.
             </h1>
             <p>
-              Aucun compte, rôle ou service d’administration n’est activé dans cette version de
-              Méridien.
+              Aucun compte, rôle ou service d’administration n’est activé dans cette version
+              d’AcuFrame.
             </p>
           </header>
           <button type="button" class="source-feedback-link" data-view="home">
@@ -838,19 +932,33 @@
           </svg>
           Corps
         </button>
-        <button type="button" data-view="search" data-nav-view="search">
+        <button
+          type="button"
+          data-view="search"
+          data-nav-view="search"
+          data-nav-mode="analysis"
+          data-open-analysis
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="6.5"></circle>
-            <path d="m16 16 4 4"></path>
+            <circle cx="6" cy="6" r="2.2"></circle>
+            <circle cx="18" cy="8" r="2.2"></circle>
+            <circle cx="11" cy="18" r="2.2"></circle>
+            <path d="M8.1 6.4 15.8 7.6M7.1 7.9l2.8 8.1M16.6 9.8l-4.3 6.6"></path>
           </svg>
-          Recherche
+          Raisonnement
         </button>
-        <button type="button" data-view="search" data-open-analysis>
+        <button
+          type="button"
+          data-view="search"
+          data-nav-view="search"
+          data-nav-mode="documentary"
+          data-open-referentiel
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 4h14v16H5z"></path>
-            <path d="M8.5 9h7M8.5 12.5h7M8.5 16h4"></path>
+            <path d="M4 5.5c2.8-.9 5.4-.5 8 1.2v12c-2.6-1.7-5.2-2.1-8-1.2z"></path>
+            <path d="M20 5.5c-2.8-.9-5.4-.5-8 1.2v12c2.6-1.7 5.2-2.1 8-1.2z"></path>
           </svg>
-          Analyse
+          Référentiel
         </button>
         <button type="button" data-action="show-points">
           <svg viewBox="0 0 24 24" aria-hidden="true">
