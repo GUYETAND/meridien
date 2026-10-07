@@ -17,8 +17,8 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="AcuFrame" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <script type="module" crossorigin src="./assets/index-D2kYIaW4.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BROfYrDB.css">
+    <script type="module" crossorigin src="./assets/index-CPYuD71F.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-F9Pc9NVK.css">
   <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <a class="skip-link" href="#view-home">Aller au contenu principal</a>
@@ -335,6 +335,50 @@
             <p id="search-mode-description">
               Trouvez des points et régions dans la base disponible, sans ouvrir le raisonnement.
             </p>
+            <section id="clarifier" class="clarifier" aria-labelledby="clarifier-title" hidden>
+              <div class="clarifier-head">
+                <h2 id="clarifier-title">Clarification de la plainte</h2>
+                <label class="clarifier-debug-toggle">
+                  <input type="checkbox" id="clarifier-debug" checked />
+                  Mode Debug
+                </label>
+              </div>
+              <div class="clarifier-assistant">
+                <p id="clarifier-assistant-status" role="status"></p>
+                <label class="clarifier-debug-toggle" hidden>
+                  <input type="checkbox" id="clarifier-assistant" checked />
+                  Utiliser le modèle de langage
+                </label>
+                <label id="clarifier-code-field" class="clarifier-code" hidden>
+                  Code d'accès
+                  <input type="password" id="clarifier-code" autocomplete="off" />
+                </label>
+              </div>
+              <p>
+                Saisissez la plainte avec les mots du patient. Une seule question à la fois, puis
+                une synthèse factuelle : aucune interprétation d'acupuncture, aucun diagnostic.
+              </p>
+              <ol id="clarifier-log" class="clarifier-log" aria-live="polite" hidden></ol>
+              <form id="clarifier-form" class="clarifier-form">
+                <div class="clarifier-input-field">
+                  <label id="clarifier-input-label" for="clarifier-input">Plainte du patient</label>
+                  <textarea id="clarifier-input" rows="3" autocomplete="off"></textarea>
+                </div>
+                <div id="clarifier-suggestions" class="clarifier-suggestions"></div>
+                <div class="clarifier-actions">
+                  <button type="submit" id="clarifier-send" disabled>Commencer</button>
+                  <button type="button" id="clarifier-stop" hidden>Arrêter et synthétiser</button>
+                  <button type="button" id="clarifier-reset">Recommencer</button>
+                </div>
+              </form>
+              <section
+                id="clarifier-synthesis"
+                class="clarifier-synthesis"
+                aria-live="polite"
+                hidden
+              ></section>
+              <section id="clarifier-debug-panel" class="clarifier-debug" hidden></section>
+            </section>
             <section
               id="clinical-v3"
               class="clinical-v3"
