@@ -17,8 +17,8 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="AcuFrame" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <script type="module" crossorigin src="./assets/index-CF3nvMPv.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BIAd6yWS.css">
+    <script type="module" crossorigin src="./assets/index-DtnIsEfB.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-URLdmcYR.css">
   <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <a class="skip-link" href="#view-home">Aller au contenu principal</a>
@@ -351,7 +351,14 @@
                 </label>
                 <label id="clarifier-code-field" class="clarifier-code" hidden>
                   Code d'accès
-                  <input type="password" id="clarifier-code" autocomplete="off" />
+                  <input
+                    type="password"
+                    id="clarifier-code"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    autocorrect="off"
+                    spellcheck="false"
+                  />
                 </label>
               </div>
               <p>
@@ -361,13 +368,19 @@
               <ol id="clarifier-log" class="clarifier-log" aria-live="polite" hidden></ol>
               <p id="clarifier-error" class="clarifier-error" role="alert" hidden></p>
               <form id="clarifier-form" class="clarifier-form">
+                <div
+                  id="clarifier-suggestions"
+                  class="clarifier-suggestions"
+                  role="group"
+                  aria-label="Réponses suggérées"
+                ></div>
                 <div class="clarifier-input-field">
                   <label id="clarifier-input-label" for="clarifier-input">Plainte du patient</label>
                   <textarea id="clarifier-input" rows="3" autocomplete="off"></textarea>
                 </div>
-                <div id="clarifier-suggestions" class="clarifier-suggestions"></div>
                 <div class="clarifier-actions">
                   <button type="submit" id="clarifier-send" disabled>Commencer</button>
+                  <button type="button" id="clarifier-unable" hidden>Je ne sais pas</button>
                   <button type="button" id="clarifier-stop" hidden>Arrêter et synthétiser</button>
                   <button type="button" id="clarifier-reset">Recommencer</button>
                 </div>
