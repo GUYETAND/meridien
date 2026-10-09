@@ -17,8 +17,8 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Énergétique TC" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <script type="module" crossorigin src="./assets/index-DXdoNaTM.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BRn2miv9.css">
+    <script type="module" crossorigin src="./assets/index-g22n0l_B.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-8s40k66E.css">
   <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <a class="skip-link" href="#view-home">Aller au contenu principal</a>
@@ -720,9 +720,6 @@
 
         <section class="viewer-panel panel" aria-labelledby="viewer-title">
           <div class="explorer-toolbar">
-            <button type="button" class="explorer-home" data-view="home">
-              <span aria-hidden="true">←</span> Accueil
-            </button>
             <h1 class="explorer-title" id="explorer-title" data-view-heading tabindex="-1">
               Explorer le corps
             </h1>
@@ -916,6 +913,13 @@
               Agrandir
             </button>
           </header>
+          <div
+            class="explorer-faces"
+            id="explorer-faces"
+            role="group"
+            aria-label="Face affichée dans la vue agrandie"
+            hidden
+          ></div>
           <div class="explorer-detail-stage" id="explorer-detail-stage">
             <canvas id="explorer-detail-canvas" role="img" aria-label="Vue agrandie"></canvas>
             <p class="explorer-detail-empty" id="explorer-detail-empty">
