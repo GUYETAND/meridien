@@ -1,7 +1,7 @@
 {
-  "name": "AcuFrame — Acupuncture traditionnelle",
-  "short_name": "AcuFrame",
-  "description": "Outil de raisonnement en acupuncture traditionnelle : observation, corps et référentiel reliés.",
+  "name": "Énergétique Traditionnelle Chinoise",
+  "short_name": "Énergétique TC",
+  "description": "Énergétique Traditionnelle Chinoise : explorer le corps en 3D, comprendre et relier les observations d'un cas.",
   "lang": "fr",
   "dir": "ltr",
   "id": "/",

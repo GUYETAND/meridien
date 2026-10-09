@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>AcuFrame — Acupuncture traditionnelle</title>
+    <title>Énergétique Traditionnelle Chinoise</title>
     <meta
       name="description"
-      content="AcuFrame, outil de raisonnement en acupuncture traditionnelle : partir de ce que l'on observe, du corps ou d'une notion connue."
+      content="Énergétique Traditionnelle Chinoise : explorer le corps en 3D et décrypter un cas, pour les praticiens des approches utilisant des points traditionnels."
     />
     <link rel="manifest" href="manifest.webmanifest" />
     <meta name="theme-color" content="#f8f7f3" />
@@ -15,16 +15,21 @@
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="AcuFrame" />
+    <meta name="apple-mobile-web-app-title" content="Énergétique TC" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <script type="module" crossorigin src="./assets/index-DtnIsEfB.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-URLdmcYR.css">
+    <script type="module" crossorigin src="./assets/index-fW8LOY6D.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-76Az8-Kh.css">
   <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <a class="skip-link" href="#view-home">Aller au contenu principal</a>
     <div class="app-shell">
       <header class="topbar">
-        <a class="brand-lockup" href="#/" data-view="home" aria-label="AcuFrame, accueil">
+        <a
+          class="brand-lockup"
+          href="#/"
+          data-view="home"
+          aria-label="Énergétique Traditionnelle Chinoise, accueil"
+        >
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 44 44" role="img">
               <circle cx="22" cy="22" r="19"></circle>
@@ -34,8 +39,8 @@
             </svg>
           </span>
           <span>
-            <strong>AcuFrame</strong>
-            <small>Acupuncture traditionnelle</small>
+            <strong>Énergétique Traditionnelle Chinoise</strong>
+            <small>Explorer · Comprendre · Relier</small>
           </span>
         </a>
 
@@ -90,6 +95,22 @@
           </button>
           <button
             type="button"
+            class="top-action top-settings"
+            data-open-settings
+            aria-haspopup="dialog"
+            aria-controls="settings-dialog"
+            aria-label="Paramètres"
+            title="Paramètres"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"
+              ></path>
+            </svg>
+          </button>
+          <button
+            type="button"
             class="top-action"
             id="install"
             title="Installer l'application"
@@ -132,21 +153,14 @@
             </svg>
             <span>Corps</span>
           </button>
-          <button
-            type="button"
-            class="rail-item"
-            data-view="search"
-            data-nav-view="search"
-            data-nav-mode="analysis"
-            data-open-analysis
-          >
+          <button type="button" class="rail-item" data-view="case" data-nav-view="case">
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="6" cy="6" r="2.2"></circle>
-              <circle cx="18" cy="8" r="2.2"></circle>
-              <circle cx="11" cy="18" r="2.2"></circle>
-              <path d="M8.1 6.4 15.8 7.6M7.1 7.9l2.8 8.1M16.6 9.8l-4.3 6.6"></path>
+              <path
+                d="M4 5h11a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"
+              ></path>
+              <path d="M19 9h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v3l-3-3h-4"></path>
             </svg>
-            <span>Raisonnement</span>
+            <span>Décrypter un cas</span>
           </button>
           <button
             type="button"
@@ -173,126 +187,156 @@
 
       <main class="entry-view home-view view" id="view-home" tabindex="-1">
         <section class="home-page-shell" aria-labelledby="home-title">
-          <div class="home-hero">
-            <span class="entry-kicker">Outil de raisonnement traditionnel</span>
-            <h1 id="home-title" data-view-heading tabindex="-1">Un symptôme n’est jamais isolé.</h1>
-            <p>
-              Reliez ce que vous observez aux mouvements, fonctions, énergies, trajets et points qui
-              peuvent l'éclairer.
-            </p>
-          </div>
+          <header class="home-hero">
+            <h1 id="home-title" data-view-heading tabindex="-1">
+              Énergétique Traditionnelle Chinoise
+            </h1>
+            <p class="home-tagline">Explorer · Comprendre · Relier</p>
+          </header>
 
-          <form class="home-observe" id="home-observe-form" aria-labelledby="home-observe-title">
-            <h2 id="home-observe-title" class="home-label">Partir de ce que j'observe</h2>
-            <label class="sr-only" for="home-observe"
-              >Décrivez en langage courant les symptômes, signes ou circonstances observés</label
-            >
-            <div class="home-observe-field">
-              <textarea
-                id="home-observe"
-                rows="2"
-                placeholder="Décrivez ce que vous observez…"
-                autocomplete="off"
-                spellcheck="true"
-                enterkeyhint="go"
-              ></textarea>
-              <button type="submit" class="home-observe-submit">
-                Explorer les pistes <b aria-hidden="true">→</b>
-              </button>
-            </div>
-            <div class="home-examples" id="home-observe-examples">
-              <span id="home-observe-examples-label">Par exemple</span>
-              <div role="group" aria-labelledby="home-observe-examples-label">
-                <button type="button" data-example="douleur interne du genou à la marche">
-                  douleur interne du genou à la marche
-                </button>
-                <button type="button" data-example="ballonnements après les repas">
-                  ballonnements après les repas
-                </button>
-                <button type="button" data-example="bouffées de chaleur la nuit">
-                  bouffées de chaleur la nuit
-                </button>
-              </div>
-            </div>
-          </form>
-
-          <section class="home-body" aria-labelledby="home-body-title">
-            <div class="home-mannequin-wrap">
-              <svg
-                id="home-mannequin"
-                viewBox="0 0 100 200"
-                role="group"
-                aria-label="Mannequin : choisissez une zone du corps"
-              ></svg>
-            </div>
-            <div class="home-body-copy">
-              <h2 id="home-body-title" class="home-label">Partir du corps</h2>
-              <p>
-                Choisissez une zone pour révéler les trajets, points et relations qui la traversent.
-              </p>
+          <ul class="home-doors" aria-label="Choisir une voie">
+            <li>
               <button
                 type="button"
-                class="home-link home-link-body"
+                class="home-door"
+                data-home-door="body"
                 data-view="atlas"
                 data-action="focus-body"
-                data-home-body
               >
-                Explorer le corps <b aria-hidden="true">→</b>
+                <span class="home-door-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="8" r="4.2"></circle>
+                    <path d="M24 13v15M14 18l10 4 10-4M18 43l6-15 6 15"></path>
+                    <ellipse cx="24" cy="26" rx="19" ry="6.5"></ellipse>
+                  </svg>
+                </span>
+                <strong>Explorer le corps en 3D</strong>
+                <span class="home-door-text">Explorer les régions du corps et leurs relations</span>
               </button>
-            </div>
-          </section>
+            </li>
+            <li>
+              <button type="button" class="home-door" data-home-door="case" data-view="case">
+                <span class="home-door-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <path
+                      d="M7 10h24a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H17l-7 6v-6H7a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z"
+                    ></path>
+                    <path
+                      d="M39 18h2a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4h-2v5l-6-5h-9a4 4 0 0 1-4-4v-2"
+                    ></path>
+                    <path d="M11 17h16M11 22h10"></path>
+                  </svg>
+                </span>
+                <strong>Décrypter un cas</strong>
+                <span class="home-door-text"
+                  >Explorer les pistes énergétiques à partir d’observations</span
+                >
+              </button>
+            </li>
+            <li>
+              <div class="home-door is-disabled" aria-disabled="true" data-home-door="theme">
+                <span class="home-door-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <path d="M6 9c6-2 12-1 18 3v28c-6-4-12-5-18-3Z"></path>
+                    <path d="M42 9c-6-2-12-1-18 3v28c6-4 12-5 18-3Z"></path>
+                  </svg>
+                </span>
+                <strong>Approfondir un thème</strong>
+                <span class="home-door-text"
+                  >Les connaissances, notions et systèmes traditionnels</span
+                >
+                <em class="home-door-badge">En préparation</em>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
 
-          <section class="home-direct" aria-labelledby="home-direct-title">
-            <h2 id="home-direct-title" class="home-label">
-              Vous cherchez déjà une notion précise ?
-            </h2>
-            <form id="home-direct-form" class="home-direct-form" role="search">
-              <label class="sr-only" for="home-direct"
-                >Rechercher un point, un méridien, une fonction, une notion</label
-              >
-              <span class="home-direct-glyph" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="11" cy="11" r="6.5"></circle>
-                  <path d="m16 16 4 4"></path>
-                </svg>
-              </span>
-              <input
-                id="home-direct"
-                type="search"
-                inputmode="search"
-                placeholder="Point, méridien, fonction, notion…"
-                autocomplete="off"
-                autocapitalize="none"
-                spellcheck="false"
-                aria-describedby="home-direct-hint"
-              />
-              <button type="submit">Rechercher</button>
-            </form>
-            <p class="home-direct-hint" id="home-direct-hint">
-              Ex. 1P · 4Rte · Tchrong Mo · Oé · Foie
+      <main class="entry-view case-view view" id="view-case" tabindex="-1" hidden>
+        <section class="case-shell" id="case-shell" aria-labelledby="case-title" data-state="empty">
+          <header class="case-intro">
+            <h1 id="case-title" data-view-heading tabindex="-1">
+              Quel cas souhaitez-vous explorer ?
+            </h1>
+            <p>
+              Décrivez librement ce que vous observez : symptômes, localisation, circonstances,
+              chronologie, ce qui améliore ou aggrave. Aucun champ n'est imposé.
             </p>
-          </section>
+          </header>
 
-          <section
-            class="home-referentiel"
-            data-referentiel-index
-            aria-labelledby="home-referentiel-title"
-          >
-            <div class="home-referentiel-head">
-              <h2 id="home-referentiel-title" class="home-label">Explorer le référentiel</h2>
-              <button
-                type="button"
-                class="home-link"
-                data-view="search"
-                data-home-search
-                data-open-referentiel
+          <div class="case-bar" id="case-bar" hidden>
+            <button type="button" class="case-bar-home" data-view="home">
+              <span aria-hidden="true">←</span> Accueil
+            </button>
+            <strong>Décrypter un cas</strong>
+            <button type="button" class="case-bar-new" id="case-new">Nouveau cas</button>
+          </div>
+
+          <ol
+            class="case-thread"
+            id="case-thread"
+            aria-label="Conversation"
+            aria-live="polite"
+          ></ol>
+
+          <div class="case-dock">
+            <p class="case-error" id="case-error" role="alert" hidden></p>
+            <div
+              class="case-suggestions"
+              id="case-suggestions"
+              role="group"
+              aria-label="Réponses suggérées"
+              hidden
+            ></div>
+            <form class="case-composer" id="case-form">
+              <label class="sr-only" for="case-input" id="case-input-label"
+                >Observations concernant votre patient</label
               >
-                Tout le référentiel <b aria-hidden="true">→</b>
+              <textarea
+                id="case-input"
+                rows="2"
+                placeholder="Décrivez les observations concernant votre patient…"
+                autocomplete="off"
+                spellcheck="true"
+                enterkeyhint="send"
+              ></textarea>
+              <button type="submit" id="case-send" disabled>
+                <span>Envoyer</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 12h15M13 6l6 6-6 6"></path>
+                </svg>
               </button>
+            </form>
+            <div class="case-actions" id="case-actions" hidden>
+              <button type="button" id="case-unable">Je ne sais pas</button>
+              <button type="button" id="case-explore">Explorer les pistes</button>
+              <button type="button" id="case-stop">Arrêter les questions</button>
             </div>
-            <div class="referentiel-pills" data-referentiel-list></div>
-            <div class="referentiel-detail" data-referentiel-detail aria-live="polite" hidden></div>
-          </section>
+          </div>
+
+          <footer class="case-foot">
+            <ul class="case-engines" id="case-engines" aria-label="État des moteurs"></ul>
+            <label id="case-code-field" class="case-code" hidden>
+              Code d'accès du serveur
+              <input
+                type="password"
+                id="case-code"
+                autocomplete="off"
+                autocapitalize="off"
+                autocorrect="off"
+                spellcheck="false"
+              />
+            </label>
+            <label class="case-debug-toggle">
+              <input type="checkbox" id="case-debug" />
+              Mode Debug
+            </label>
+            <p class="case-safety">
+              Outil d'exploration : ni diagnostic, ni protocole. Les pistes restent des hypothèses
+              tant qu'elles ne sont pas validées. Rien n'est conservé après la session.
+            </p>
+          </footer>
+          <section class="case-debug" id="case-debug-panel" hidden></section>
         </section>
       </main>
 
@@ -473,6 +517,16 @@
               </div>
               <div id="search-region-options" class="search-region-options"></div>
             </section>
+            <section
+              id="search-notion-matches"
+              class="search-region-matches search-notion-matches"
+              aria-labelledby="search-notion-title"
+              hidden
+            >
+              <h2 id="search-notion-title">Notions</h2>
+              <p>Écrites selon la transcription choisie dans les Paramètres.</p>
+              <ul id="search-notion-options"></ul>
+            </section>
             <div id="search-page-suggest" class="search-page-suggest" aria-label="Exemples">
               <button type="button" data-q="digestion lente">digestion lente</button>
               <button type="button" data-q="céphalée">céphalée</button>
@@ -582,8 +636,8 @@
               Administration indisponible dans cette version.
             </h1>
             <p>
-              Aucun compte, rôle ou service d’administration n’est activé dans cette version
-              d’AcuFrame.
+              Aucun compte, rôle ou service d’administration n’est activé dans cette version de
+              l’application.
             </p>
           </header>
           <button type="button" class="source-feedback-link" data-view="home">
@@ -593,6 +647,35 @@
       </main>
 
       <main class="clinical-workspace view" id="view-atlas" tabindex="-1" hidden>
+        <aside
+          class="explorer-layers panel"
+          id="explorer-layers"
+          aria-labelledby="explorer-layers-title"
+          hidden
+        >
+          <header class="explorer-layers-head">
+            <h2 id="explorer-layers-title">Calques</h2>
+            <button
+              type="button"
+              class="explorer-icon-button"
+              id="explorer-layers-close"
+              aria-label="Fermer les calques"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"></path>
+              </svg>
+            </button>
+          </header>
+          <button type="button" class="explorer-hide-all" id="explorer-hide-all">
+            Tout masquer
+          </button>
+          <div class="explorer-layer-tree" id="explorer-layer-tree"></div>
+          <p class="explorer-layers-note">
+            Un calque n'est activable que si ses tracés ou ses points sont disponibles et validés.
+            Les autres restent visibles, grisés, avec la mention « À venir ».
+          </p>
+        </aside>
+
         <section class="anatomy-panel panel" id="anatomy-panel" aria-labelledby="anatomy-title">
           <header class="panel-heading">
             <div>
@@ -636,6 +719,31 @@
         </section>
 
         <section class="viewer-panel panel" aria-labelledby="viewer-title">
+          <div class="explorer-toolbar">
+            <button type="button" class="explorer-home" data-view="home">
+              <span aria-hidden="true">←</span> Accueil
+            </button>
+            <h1 class="explorer-title" id="explorer-title" data-view-heading tabindex="-1">
+              Explorer le corps
+            </h1>
+            <div class="explorer-sex" role="group" aria-label="Modèle affiché">
+              <button type="button" data-explorer-sex="m" aria-pressed="true">Homme</button>
+              <button type="button" data-explorer-sex="f" aria-pressed="false">Femme</button>
+            </div>
+            <button
+              type="button"
+              class="explorer-layers-toggle"
+              id="explorer-layers-toggle"
+              aria-controls="explorer-layers"
+              aria-expanded="false"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m12 3 9 5-9 5-9-5Z"></path>
+                <path d="m3 13 9 5 9-5"></path>
+              </svg>
+              Calques
+            </button>
+          </div>
           <header class="viewer-heading">
             <div>
               <span class="panel-kicker" id="viewer-kicker">Corps · vue 3D</span>
@@ -716,6 +824,19 @@
             <div class="stage-label" id="body-stage-label">
               Glissez pour tourner · touchez un genou ou une jambe
             </div>
+            <div class="explorer-stage-tools">
+              <span class="explorer-family" id="explorer-family" aria-live="polite"
+                >Vue de face</span
+              >
+              <button type="button" id="explorer-recenter">Recentrer</button>
+              <button type="button" id="explorer-whole-body">Corps entier</button>
+            </div>
+            <div
+              class="explorer-hover-label"
+              id="explorer-hover-label"
+              aria-hidden="true"
+              hidden
+            ></div>
             <div class="stage-controls" aria-label="Contrôles de la vue 3D">
               <button type="button" id="body-zoom-in" aria-label="Zoomer" title="Zoomer">+</button>
               <button type="button" id="body-zoom-out" aria-label="Dézoomer" title="Dézoomer">
@@ -769,6 +890,46 @@
             <span class="viewer-legend" id="viewer-point-legend"><i></i> Point correspondant</span>
             <span id="body-hint">Les positions sans calibration précise sont approximatives.</span>
           </footer>
+        </section>
+
+        <section
+          class="explorer-detail panel"
+          id="explorer-detail"
+          aria-labelledby="explorer-detail-title"
+          data-state="empty"
+        >
+          <button type="button" class="explorer-detail-back" id="explorer-detail-back">
+            <span aria-hidden="true">←</span> Retour au corps entier
+          </button>
+          <header class="explorer-detail-head">
+            <div>
+              <span class="panel-kicker" id="explorer-detail-kicker">Vue agrandie</span>
+              <h2 id="explorer-detail-title" tabindex="-1">Sélectionnez une zone du corps</h2>
+            </div>
+            <button
+              type="button"
+              class="explorer-detail-expand"
+              id="explorer-detail-expand"
+              aria-pressed="false"
+              hidden
+            >
+              Agrandir
+            </button>
+          </header>
+          <div class="explorer-detail-stage" id="explorer-detail-stage">
+            <canvas id="explorer-detail-canvas" role="img" aria-label="Vue agrandie"></canvas>
+            <p class="explorer-detail-empty" id="explorer-detail-empty">
+              Sélectionnez une zone du corps
+            </p>
+          </div>
+          <p class="explorer-detail-note" id="explorer-detail-note" role="status"></p>
+          <button type="button" class="explorer-detail-local" id="explorer-detail-local" hidden>
+            Ouvrir le plan anatomique
+          </button>
+          <details class="explorer-zone-list" id="explorer-zone-list">
+            <summary>Zones de la vue <span id="explorer-zone-family">de face</span></summary>
+            <div class="explorer-zone-options" id="explorer-zone-options"></div>
+          </details>
         </section>
 
         <aside class="inspector-panel panel" aria-label="Inspecteur clinique">
@@ -990,20 +1151,14 @@
           </svg>
           Corps
         </button>
-        <button
-          type="button"
-          data-view="search"
-          data-nav-view="search"
-          data-nav-mode="analysis"
-          data-open-analysis
-        >
+        <button type="button" data-view="case" data-nav-view="case">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="6" cy="6" r="2.2"></circle>
-            <circle cx="18" cy="8" r="2.2"></circle>
-            <circle cx="11" cy="18" r="2.2"></circle>
-            <path d="M8.1 6.4 15.8 7.6M7.1 7.9l2.8 8.1M16.6 9.8l-4.3 6.6"></path>
+            <path
+              d="M4 5h11a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"
+            ></path>
+            <path d="M19 9h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v3l-3-3h-4"></path>
           </svg>
-          Raisonnement
+          Cas
         </button>
         <button
           type="button"
@@ -1017,13 +1172,6 @@
             <path d="M20 5.5c-2.8-.9-5.4-.5-8 1.2v12c2.6-1.7 5.2-2.1 8-1.2z"></path>
           </svg>
           Référentiel
-        </button>
-        <button type="button" data-action="show-points">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="8" r="3"></circle>
-            <path d="M5 21c.4-5 2.7-8 7-8s6.6 3 7 8"></path>
-          </svg>
-          Points
         </button>
       </nav>
 
@@ -1042,6 +1190,56 @@
         </button>
         <div class="grip" aria-hidden="true"></div>
         <div id="sheet-content"></div>
+      </div>
+
+      <div class="settings-backdrop" id="settings-backdrop" hidden></div>
+      <div
+        class="settings-dialog"
+        id="settings-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="settings-title"
+        hidden
+      >
+        <header class="settings-head">
+          <h2 id="settings-title">Paramètres</h2>
+          <button
+            type="button"
+            class="explorer-icon-button"
+            id="settings-close"
+            aria-label="Fermer les paramètres"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m6 6 12 12M18 6 6 18"></path>
+            </svg>
+          </button>
+        </header>
+        <form id="settings-form" class="settings-form">
+          <fieldset>
+            <legend>Écriture des codes de points</legend>
+            <div id="settings-point-code"></div>
+          </fieldset>
+          <fieldset>
+            <legend>Transcription des termes chinois</legend>
+            <div id="settings-transcription"></div>
+            <p class="settings-note" id="settings-transcription-note"></p>
+          </fieldset>
+          <fieldset>
+            <legend>Options</legend>
+            <label class="settings-check">
+              <input type="checkbox" name="secondary" />
+              <span>Afficher une nomenclature secondaire sous le nom principal</span>
+            </label>
+            <label class="settings-check">
+              <input type="checkbox" name="hanzi" />
+              <span>Caractères chinois, lorsqu'ils sont disponibles et vérifiés</span>
+            </label>
+          </fieldset>
+          <p class="settings-note">
+            Préférences gardées sur cet appareil et appliquées immédiatement. La recherche reconnaît
+            toutes les écritures, quel que soit ce réglage.
+          </p>
+        </form>
       </div>
 
       <div class="toast" id="toast" role="status" aria-live="polite"></div>
