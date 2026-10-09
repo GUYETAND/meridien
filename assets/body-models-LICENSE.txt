@@ -58,9 +58,13 @@ Licence : CC0 1.0 Universal (domaine public).
 https://creativecommons.org/publicdomain/zero/1.0/
 
 Notes techniques :
- - La source STL est réduite à 120 000 triangles avec une simplification
-   quadratique conservant la silhouette.
- - Conversion reproductible avec scripts/optimize-body-model.py.
+ - La source STL (5 419 520 triangles, SHA-1
+   c3f744629a1ae9a3c83e270d29d20f96c16cd2ee) est réduite à 360 000
+   triangles par la décimation « Collapse » de Blender, qui conserve la
+   silhouette et les détails du visage et des mains, puis compressée en
+   Draco (0,75 Mo).
+ - Conversion reproductible avec scripts/decimate-body-model-blender.py puis
+   scripts/optimize-body-model.py (repère et couleur).
  - Le squelette masculin assorti est cloné puis ajusté à l'enveloppe féminine
    distincte. Cet ajustement est visuel et approximatif ; il ne constitue pas
    une modélisation anatomique féminine certifiée.
