@@ -17,8 +17,8 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Orinergie" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <script type="module" crossorigin src="./assets/index-C99bQ84Q.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BDzxbxP_.css">
+    <script type="module" crossorigin src="./assets/index-CiXemWtN.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BJpYvKDV.css">
   <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <a class="skip-link" href="#view-home">Aller au contenu principal</a>
@@ -262,11 +262,15 @@
         <section class="case-shell" id="case-shell" aria-labelledby="case-title" data-state="empty">
           <header class="case-intro">
             <h1 id="case-title" data-view-heading tabindex="-1">
-              Quel cas souhaitez-vous explorer ?
+              Par quoi souhaitez-vous commencer ?
             </h1>
             <p>
-              Décrivez librement ce que vous observez : symptômes, localisation, circonstances,
-              chronologie, ce qui améliore ou aggrave. Aucun champ n'est imposé.
+              Un simple symptôme, quelques observations ou une anamnèse complète : décrivez
+              librement ce que vous souhaitez explorer.
+            </p>
+            <p class="case-intro-hint">
+              Plus votre description sera précise et détaillée, plus nous pourrons affiner les
+              pistes de réflexion.
             </p>
           </header>
 
@@ -296,18 +300,18 @@
             ></div>
             <form class="case-composer" id="case-form">
               <label class="sr-only" for="case-input" id="case-input-label"
-                >Observations concernant votre patient</label
+                >Ce que vous souhaitez explorer</label
               >
               <textarea
                 id="case-input"
                 rows="2"
-                placeholder="Décrivez les observations concernant votre patient…"
+                placeholder="Ex. : “Insomnies” ou décrivez l'ensemble du cas de votre patient…"
                 autocomplete="off"
                 spellcheck="true"
                 enterkeyhint="send"
               ></textarea>
               <button type="submit" id="case-send" disabled>
-                <span>Envoyer</span>
+                <span>Explorer</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4 12h15M13 6l6 6-6 6"></path>
                 </svg>
@@ -315,7 +319,7 @@
             </form>
             <div class="case-actions" id="case-actions" hidden>
               <button type="button" id="case-unable">Je ne sais pas</button>
-              <button type="button" id="case-explore">Explorer les pistes</button>
+              <button type="button" id="case-explore">Voir le raisonnement du moteur</button>
               <button type="button" id="case-stop">Arrêter les questions</button>
             </div>
           </div>
